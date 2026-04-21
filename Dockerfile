@@ -11,4 +11,5 @@ USER node
 EXPOSE 3000
 
 # use node directly instead of npm to avoid extra process overhead
-CMD ["node", "server.js"]
+# --max-old-space-size keeps memory usage reasonable on small VPS
+CMD ["node", "--max-old-space-size=256", "server.js"]
